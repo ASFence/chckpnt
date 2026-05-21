@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Secret 값 주입
         run: |
-          sed -i "s|\\$APPS_SCRIPT_URL|${{ secrets.APPS_SCRIPT_URL }}|g" index.template.html
+          sed -i "s|\\$API_URL|${{ secrets.APPS_SCRIPT_URL }}|g" index.template.html
           sed -i "s|\\$API_TOKEN|${{ secrets.API_TOKEN }}|g" index.template.html
           mv index.template.html index.html
       - name: GitHub Pages 배포
